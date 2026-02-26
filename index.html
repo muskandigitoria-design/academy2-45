@@ -1,16 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radhe Khaiwal Official</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
             --gold: #d4af37;
             --light-gold: #f9e29c;
+            --wa-green: #25D366;
+            --wa-dark: #128C7E;
             --dark-bg: #0a0a0a;
             --card-bg: rgba(255, 255, 255, 0.05);
         }
@@ -25,26 +28,27 @@
             align-items: center;
             min-height: 100vh;
             background: radial-gradient(circle at top, #1a1a1a 0%, #000000 100%);
+            padding-bottom: 50px;
         }
 
         .container {
-            max-width: 500px;
+            max-width: 450px;
             width: 90%;
             text-align: center;
-            padding: 40px 0;
+            padding: 30px 0;
         }
 
         /* Logo Styling */
         .logo-container {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .logo-img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 3px solid var(--gold);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
             object-fit: cover;
         }
 
@@ -52,42 +56,79 @@
         h1 {
             font-family: 'Cinzel', serif;
             color: var(--gold);
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            margin: 10px 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            margin: 10px 0 5px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
         .subtitle {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            color: #888;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: #aaa;
             text-transform: uppercase;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
-        /* Main Card */
+        /* Green WhatsApp Button */
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--wa-green), var(--wa-dark));
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.5);
+            filter: brightness(1.1);
+        }
+
+        .cta-button i {
+            margin-right: 12px;
+            font-size: 1.6rem;
+        }
+
+        /* Glass Card */
         .glass-card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
         .rate-box {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: #fff;
             margin-bottom: 20px;
-            padding: 10px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
         }
 
+        /* BOLD RATE styling */
         .rate-box b {
+            display: block;
             color: var(--light-gold);
-            font-size: 1.8rem;
-            text-shadow: 0 0 10px rgba(255, 226, 156, 0.5);
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-top: 5px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
         }
 
         /* Timing Table */
@@ -99,59 +140,72 @@
         .timing-row {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            align-items: center;
+            padding: 12px 10px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .game-name { color: var(--gold); font-weight: 600; }
-        .game-time { color: #fff; }
+        .timing-row:last-child { border-bottom: none; }
+
+        .game-name { 
+            color: var(--light-gold); 
+            font-weight: 600; 
+            font-size: 0.95rem;
+        }
+        
+        .game-time { 
+            background: rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+        }
 
         /* Stats Section */
         .stats-container {
             display: flex;
             justify-content: space-around;
-            margin-top: 20px;
+            margin-top: 25px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px 5px;
+            border-radius: 15px;
         }
 
-        .stat-item h3 { color: var(--gold); margin: 0; font-size: 1.4rem; }
-        .stat-item p { font-size: 0.7rem; color: #aaa; margin: 0; text-transform: uppercase; }
-
-        /* Button Styling */
-        .cta-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(45deg, #d4af37, #f9e29c);
-            color: #000;
-            text-decoration: none;
-            padding: 18px 30px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-            transition: 0.3s;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.5);
-        }
-
-        .cta-button i {
-            margin-right: 10px;
-            font-size: 1.4rem;
-        }
+        .stat-item h3 { color: var(--gold); margin: 0; font-size: 1.2rem; }
+        .stat-item p { font-size: 0.65rem; color: #aaa; margin: 0; text-transform: uppercase; font-weight: 600; }
 
         /* Footer */
         .footer-text {
-            margin-top: 30px;
-            font-size: 0.75rem;
-            color: #666;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: #777;
+            line-height: 1.6;
         }
 
-        .nexgroww { color: #d4af37; font-weight: bold; text-decoration: none; }
+        .nexgroww { 
+            color: var(--gold); 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-bottom: 1px solid var(--gold);
+        }
+
+        /* Pulsing effect for the LIVE status */
+        .pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3b3b;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -164,9 +218,14 @@
         <h1>RADHE KHAIWAL OFFICIAL</h1>
         <div class="subtitle">GHAZIABAD • FARIDABAD • SATTA MATKA</div>
 
+        <a href="https://wa.me/917015344307" class="cta-button">
+            <i class="fab fa-whatsapp"></i> JOIN WHATSAPP NOW
+        </a>
+
         <div class="glass-card">
             <div class="rate-box">
-                RATE <b>₹10 KA ₹970</b>
+                JODI RATE <br>
+                <b>₹10 KA ₹970</b>
             </div>
 
             <div class="timing-grid">
@@ -206,7 +265,7 @@
                     <p>Players</p>
                 </div>
                 <div class="stat-item">
-                    <h3>LIVE</h3>
+                    <h3><span class="pulse"></span>LIVE</h3>
                     <p>Results</p>
                 </div>
             </div>
@@ -217,7 +276,8 @@
         </a>
 
         <div class="footer-text">
-            ✦ 18+ | PLAY RESPONSIBLY ✦ <br><br>
+            ✦ 18+ | PLAY RESPONSIBLY ✦ <br>
+            Trust & Fast Payment Guaranteed <br><br>
             Ads managed by <a href="https://t.me/+TRlJl628l-FkMWE9" class="nexgroww">NexGroww Agency</a>
         </div>
     </div>
